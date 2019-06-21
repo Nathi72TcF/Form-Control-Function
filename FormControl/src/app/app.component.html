@@ -1,0 +1,52 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <mat-card>
+      <h1>
+          Welcome to {{ title }}
+        </h1>
+        <img width="300" alt="Angular Logo" src="../assets/images/icon-control.jpg">
+      
+      <h2>Test your Validations </h2>
+  </mat-card>
+
+  <mat-card >
+        <form [formGroup]="myFormz">
+        <mat-form-field>
+          <span class="required" *ngIf="!myFormz.valid">*Required</span><br>
+          <input matInput formControlName="name" type="text" placeholder="Name" class="tcf">
+        </mat-form-field><br>
+        <mat-form-field>
+          <span class="required" *ngIf="!myFormz.valid">*Required</span><br>
+          <input matInput formControlName="surname" type="text" placeholder="Surname" class="tcf">
+        </mat-form-field><br>
+        <mat-form-field>
+          <span class="required" *ngIf="!myFormz.valid">*Required</span><br>
+          <input matInput formControlName="age" placeholder="Age" maxlength="2" class="tcf">
+        </mat-form-field><br>
+        <mat-form-field>
+          <span class="required" *ngIf="!myFormz.valid">*Required</span><br>
+          <input matInput formControlName="email" placeholder="Email" class="tcf">
+        </mat-form-field><br>
+        <mat-form-field>
+          <span class="required" *ngIf="!myFormz.valid">*Required</span><br>
+          <input type="number" matInput formControlName="phoneNumbers" placeholder="Phone Number" maxlength="10" class="tcf">
+        </mat-form-field><br>
+          <button (click)="addUser()" [disabled]="!myFormz.valid" mat-flat-button color="primary">Save</button>
+        </form>
+  </mat-card>
+
+  <mat-card *ngFor="let userss of myPeople">
+      Name: {{ userss.name }}<br>
+      Surname: {{ userss.surname }}<br>
+      Age: {{ userss.age }}<br>
+      Email: {{ userss.email }}<br>
+      Phone Numbers: {{ userss.phoneNumber }}
+  </mat-card>
+
+</div>
+
+<router-outlet></router-outlet>
+
+<mat-form-field class="example-full-width">
+
+</mat-form-field>
