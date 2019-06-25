@@ -21,15 +21,15 @@
         </mat-form-field><br>
         <mat-form-field>
           <span class="required" *ngIf="!myFormz.valid">*Required</span><br>
-          <input matInput formControlName="age" placeholder="Age" maxlength="2" class="tcf">
+          <input type="number" matInput formControlName="age" placeholder="Age" maxlength="2" class="tcf">
         </mat-form-field><br>
         <mat-form-field>
           <span class="required" *ngIf="!myFormz.valid">*Required</span><br>
-          <input matInput formControlName="email" placeholder="Email" class="tcf">
+          <input type="email" matInput formControlName="email" placeholder="Email" class="tcf">
         </mat-form-field><br>
         <mat-form-field>
           <span class="required" *ngIf="!myFormz.valid">*Required</span><br>
-          <input type="number" matInput formControlName="phoneNumbers" placeholder="Phone Number" maxlength="10" class="tcf">
+          <input type="tel" matInput formControlName="phoneNumbers" placeholder="Phone Number" maxlength="10" class="tcf">
         </mat-form-field><br>
           <button (click)="addUser()" [disabled]="!myFormz.valid" mat-flat-button color="primary">Save</button>
         </form>

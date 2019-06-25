@@ -22,9 +22,9 @@ export class AppComponent {
     this.myFormz = formBuilder.group({
       name : ['', Validators.required],
       surname : ['', Validators.required],
-      age : ['', Validators.maxLength(2)],
-      email : ['', Validators.email],
-      phoneNumbers : ['', Validators.maxLength(10)]
+      age : ['', Validators.maxLength(2) && Validators.required],
+      email : ['', Validators.email && Validators.required],
+      phoneNumbers : ['', Validators.maxLength(10) && Validators.required]
     });
   }
 
