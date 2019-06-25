@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <mat-card>
+      <h1>
+          Welcome to {{ title }}
+        </h1>
+        <img width="300" alt="Angular Logo" src="../assets/images/love-ply.png">
+      
+      <h2>Log in: </h2>
+  </mat-card>
+
+  <mat-card>
+    <form [formGroup]="myFormz">
+      <mat-form-field>
+          <span class="required" *ngIf="!myFormz.valid" >*Email Required</span><br>
+          <input matInput formControlName="email" type="email">
+      </mat-form-field><br>
+      <mat-form-field>
+          <!-- <span *ngIf="!myFormz.valid" class="required">*Password Required</span><br> -->
+          <input matInput formControlName="password" placeholder="New password" minlength="8" maxlength="15" required >
+          <mat-error *ngIf="myFormz.hasError('required', 'password')">
+              Please enter your newpassword
+          </mat-error>
+      </mat-form-field><br>
+      <mat-form-field>
+          <!-- <span *ngIf="!myFormz.valid" class="required">*Confirm Password</span><br> -->
+          <input matInput formControlName="confirmPassword" placeholder="Confirm password" [errorStateMatcher]="matcher"  minlength="8" maxlength="15">
+          <mat-error *ngIf="myFormz.hasError('notSame')">
+              Passwords do not match
+          </mat-error>
+      </mat-form-field><br>
+      <button [disabled]="!myFormz.valid">Save</button>
+    </form>
+  </mat-card>
+
+  <!-- <mat-card *ngFor="let mina of myPeople">
+    Email: {{ mina.email }}<br>
+    password: {{ mina.password }}<br>
+    ConfirmPassword: {{ mina.confirmPassword }}
+  </mat-card> -->
+
+</div>
+
+<router-outlet></router-outlet>
